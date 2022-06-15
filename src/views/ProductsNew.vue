@@ -13,11 +13,11 @@
     methods: {
       createProduct: function () {
         axios
-          .post("/products/new", this.newProductParams)
+          .post("/products", this.newProductParams)
           .then((response) => {
             console.log("product created", response);
             this.product = response.data;
-            this.$router.push("/products/" + this.product.id);
+            this.$router.push("/products/" + this.product.id + ".json");
           })
           .catch((error) => {
             console.log("product create error", error.response);
