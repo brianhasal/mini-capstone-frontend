@@ -27,6 +27,7 @@
     <div v-for="product in products" v-bind:key="product.id">
       <img v-bind:src="product.primary_image" alt="">
       <h2>{{ product.name }}</h2>
+      <router-link v-bind:to="`/products/${product.id}`">See Details</router-link>
     </div>
   </div>
 </template>
